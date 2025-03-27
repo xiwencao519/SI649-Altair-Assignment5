@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "hconcat": [{"layer": [{"data": {"name": "empty"}, "mark": {"type": "rect", "fillOpacity": 0, "stroke": "lightgrey", "strokeWidth": 1}, "encoding": {}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "population", "scale": {"scheme": "yellowgreenblue"}, "type": "quantitative"}, "opacity": {"condition": {"param": "param_1", "value": 1}, "value": 0.3}, "tooltip": [{"field": "state", "type": "nominal"}, {"field": "population", "type": "quantitative"}]}, "name": "view_1", "projection": {"type": "albersUsa"}, "transform": [{"lookup": "id", "from": {"data": {"name": "data-b7947eb206112acd0a5acadbcb0dbc21"}, "key": "id", "fields": ["state", "population"]}}]}], "height": 300, "width": 400}, {"data": {"name": "data-fe5580ffd9ce2f0ea36b8cdc4ca6316f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "population", "scale": {"scheme": "yellowgreenblue"}, "type": "quantitative"}, "opacity": {"condition": {"param": "param_1", "value": 1}, "value": 0.3}, "x": {"field": "population", "title": "population", "type": "quantitative"}, "y": {"field": "state", "sort": "-x", "title": "state", "type": "nominal"}}, "height": 300, "name": "view_2", "title": "Top 15 states by population", "width": 400}], "params": [{"name": "param_1", "select": {"type": "point", "fields": ["state"]}, "views": ["view_1", "view_2"]}], "resolve": {"scale": {"color": "shared"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"empty": [{}], "data-b7947eb206112acd0a5acadbcb0dbc21": [{"state": "Alabama", "id": 1, "population": 4863300}, {"state": "Alaska", "id": 2, "population": 741894}, {"state": "Arizona", "id": 4, "population": 6931071}, {"state": "Arkansas", "id": 5, "population": 2988248}, {"state": "California", "id": 6, "population": 39250017}, {"state": "Colorado", "id": 8, "population": 5540545}, {"state": "Connecticut", "id": 9, "population": 3576452}, {"state": "Delaware", "id": 10, "population": 952065}, {"state": "District of Columbia", "id": 11, "population": 681170}, {"state": "Florida", "id": 12, "population": 20612439}, {"state": "Georgia", "id": 13, "population": 10310371}, {"state": "Hawaii", "id": 15, "population": 1428557}, {"state": "Idaho", "id": 16, "population": 1683140}, {"state": "Illinois", "id": 17, "population": 12801539}, {"state": "Indiana", "id": 18, "population": 6633053}, {"state": "Iowa", "id": 19, "population": 3134693}, {"state": "Kansas", "id": 20, "population": 2907289}, {"state": "Kentucky", "id": 21, "population": 4436974}, {"state": "Louisiana", "id": 22, "population": 4681666}, {"state": "Maine", "id": 23, "population": 1331479}, {"state": "Maryland", "id": 24, "population": 6016447}, {"state": "Massachusetts", "id": 25, "population": 6811779}, {"state": "Michigan", "id": 26, "population": 9928300}, {"state": "Minnesota", "id": 27, "population": 5519952}, {"state": "Mississippi", "id": 28, "population": 2988726}, {"state": "Missouri", "id": 29, "population": 6093000}, {"state": "Montana", "id": 30, "population": 1042520}, {"state": "Nebraska", "id": 31, "population": 1907116}, {"state": "Nevada", "id": 32, "population": 2940058}, {"state": "New Hampshire", "id": 33, "population": 1334795}, {"state": "New Jersey", "id": 34, "population": 8944469}, {"state": "New Mexico", "id": 35, "population": 2081015}, {"state": "New York", "id": 36, "population": 19745289}, {"state": "North Carolina", "id": 37, "population": 10146788}, {"state": "North Dakota", "id": 38, "population": 757952}, {"state": "Ohio", "id": 39, "population": 11614373}, {"state": "Oklahoma", "id": 40, "population": 3923561}, {"state": "Oregon", "id": 41, "population": 4093465}, {"state": "Pennsylvania", "id": 42, "population": 12784227}, {"state": "Rhode Island", "id": 44, "population": 1056426}, {"state": "South Carolina", "id": 45, "population": 4961119}, {"state": "South Dakota", "id": 46, "population": 865454}, {"state": "Tennessee", "id": 47, "population": 6651194}, {"state": "Texas", "id": 48, "population": 27862596}, {"state": "Utah", "id": 49, "population": 3051217}, {"state": "Vermont", "id": 50, "population": 624594}, {"state": "Virginia", "id": 51, "population": 8411808}, {"state": "Washington", "id": 53, "population": 7288000}, {"state": "West Virginia", "id": 54, "population": 1831102}, {"state": "Wisconsin", "id": 55, "population": 5778708}, {"state": "Wyoming", "id": 56, "population": 585501}, {"state": "Puerto Rico", "id": 72, "population": 3411307}], "data-fe5580ffd9ce2f0ea36b8cdc4ca6316f": [{"state": "California", "id": 6, "population": 39250017}, {"state": "Texas", "id": 48, "population": 27862596}, {"state": "Florida", "id": 12, "population": 20612439}, {"state": "New York", "id": 36, "population": 19745289}, {"state": "Illinois", "id": 17, "population": 12801539}, {"state": "Pennsylvania", "id": 42, "population": 12784227}, {"state": "Ohio", "id": 39, "population": 11614373}, {"state": "Georgia", "id": 13, "population": 10310371}, {"state": "North Carolina", "id": 37, "population": 10146788}, {"state": "Michigan", "id": 26, "population": 9928300}, {"state": "New Jersey", "id": 34, "population": 8944469}, {"state": "Virginia", "id": 51, "population": 8411808}, {"state": "Washington", "id": 53, "population": 7288000}, {"state": "Arizona", "id": 4, "population": 6931071}, {"state": "Massachusetts", "id": 25, "population": 6811779}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
